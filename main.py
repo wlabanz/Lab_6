@@ -14,6 +14,8 @@ def encode(integer_string):
             encodedPassword = encodedPassword + str(new_digit)
     return encodedPassword
 
+def decode(password):
+    
 
 if __name__ == '__main__':
     while userOption != 3:
@@ -23,3 +25,5 @@ if __name__ == '__main__':
             passwordInput = input("Please enter your password to encode:")
             newPassword = encode(passwordInput)
             print("Your password has been encoded and stored!\n")
+        elif userOption == 2:
+            print("The encoded password is ", newPassword, ", and the original password is ", decode(newPassword), ".")
