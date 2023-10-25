@@ -15,7 +15,17 @@ def encode(integer_string):
     return encodedPassword
 
 def decode(password):
-    
+    decode_list = [0,1]
+    decode_list[0:-1] = password
+    for i in range(len(decode_list)):
+        if int(decode_list[i]) < 3:
+            decode_list[i] = str(10 + int(decode_list[i]) - 3)
+        else:
+            decode_list[i] = str(int(decode_list[i]) - 3)
+    del decode_list[-1]
+    decoded_password = ''.join(decode_list)
+    return decoded_password
+    #Decodes password 
 
 if __name__ == '__main__':
     while userOption != 3:
